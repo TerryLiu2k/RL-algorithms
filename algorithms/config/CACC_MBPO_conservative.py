@@ -41,7 +41,9 @@ def getArgs(radius_q, radius):
     NeurComm used 1 layer LSTM of width 64
     """
     p_args.update_interval=1/10
+    p_args.update_interval_warmup = 1
     p_args.n_embedding = (1+2*radius)
+    p_args.model_buffer_size = int(1e4)
     """
      bs=32 interval=4 from rainbow Q
      MBPO retrains fram scratch periodically
@@ -85,6 +87,7 @@ def getArgs(radius_q, radius):
     agent_args.wrappers = wrappers
     agent_args.agent=MultiagentMBPO
     agent_args.n_agent=8
+    agent_args.gamma=0.99
     agent_args.gamma=0.99
     agent_args.alpha=0.2
     agent_args.target_entropy = 0.2
