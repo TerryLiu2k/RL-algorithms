@@ -95,6 +95,7 @@ def getArgs(radius_q, radius_p, radius_pi, env):
     agent_args.agent=MultiagentMBPO
     agent_args.n_agent=8
     agent_args.gamma=0.99
+    agent_args.gamma=0.99
     agent_args.alpha=0.2
     agent_args.target_entropy = 0.02
     # 4 actions, 0.9 greedy = 0.6, 0.95 greedy= 0.37, 0.99 greedy 0.1

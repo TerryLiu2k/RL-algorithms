@@ -15,7 +15,7 @@ args = Config()
 #### computation
 os.environ['CUDA_VISIBLE_DEVICES']='1'
 args.n_thread = 1
-args.parallel = False
+args.parallel = True
 args.device = 'cpu'
 args.n_cpu = 1/12 # per agent, used only if parallel = True
 args.n_gpu = 0
